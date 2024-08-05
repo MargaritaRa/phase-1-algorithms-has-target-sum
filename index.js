@@ -1,5 +1,19 @@
+// [19,4,22,10] 27
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // iterate through each number in the array
+  for (let i = 0; i < array.length; i++) {
+     //   for the current num, identify a compliment that adds to the target (comp = target - num)
+    const compliment = target - array[i]
+    //   iterate throught the rest of the array
+    for (let j = i + 1;j < array.length; j++){
+       //     check if any number is our compliment
+       if(array [j] === compliment) 
+        //     if so, return true
+        return true;
+    }
+  }
+  // if I reach the end of the array, return false
+  return false;
 }
 
 /* 
@@ -7,7 +21,22 @@ function hasTargetSum(array, target) {
 */
 
 /* 
+hasTargetSum([22, 19, 4, 6, 30], 25);
   Add your pseudocode here
+  check each number in the array
+    add up numbers in the array
+    check if any numbers added equal the target number
+  if yes
+    return true
+  else
+    return false
+
+  iterate through each number in the array
+    for the current num, identify a compliment that adds to the target (comp = target - num)
+    iterate throught the rest of the array
+      check if any number is our compliment
+      if so, return true
+  if I reach the end of the array, return false
 */
 
 /*
